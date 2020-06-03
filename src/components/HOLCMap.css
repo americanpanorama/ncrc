@@ -1,0 +1,5 @@
+#holcLeafletMap.greyscale .holcRaster img {
+  -webkit-filter: grayscale(100%); 
+  filter: gray;
+  filter: grayscale(100%) brightness(125%); 
+ }

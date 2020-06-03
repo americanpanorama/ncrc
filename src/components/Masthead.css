@@ -1,0 +1,9 @@
+#masthead {
+  background-color: black;
+}
+
+#masthead h1 {
+  color: white;
+  font-size: 20px;
+  margin: 7px 30px;
+}

@@ -1,0 +1,5 @@
+#sv_map .areaRaster, #sv_map .areaRaster img, #sv_map .areaRaster img.leaflet-tile {
+  -webkit-filter: grayscale(100%) !important; 
+  filter: gray !important;
+  filter: grayscale(min(85%, 65% + ($z - 9) * 5)) !important; 
+}

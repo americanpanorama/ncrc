@@ -1,0 +1,733 @@
+/* #418e41; */
+/*#d8d165;  #f4f570; */
+/* #a79500; */
+#areaDescription header,
+#adCategory header,
+.adSearchResult header,
+.adSelections header,
+.adSelection header {
+  min-height: 40px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+#areaDescription header h3,
+#adCategory header h3,
+.adSearchResult header h3,
+.adSelections header h3,
+.adSelection header h3 {
+  max-width: 70%;
+  margin: auto auto 10px auto;
+}
+#areaDescription header .adButton,
+#adCategory header .adButton,
+.adSearchResult header .adButton,
+.adSelections header .adButton,
+.adSelection header .adButton {
+  cursor: pointer;
+}
+#areaDescription header .adButton.previous,
+#adCategory header .adButton.previous,
+.adSearchResult header .adButton.previous,
+.adSelections header .adButton.previous,
+.adSelection header .adButton.previous {
+  float: left;
+  margin-left: 10px;
+}
+#areaDescription header .adButton.next,
+#adCategory header .adButton.next,
+.adSearchResult header .adButton.next,
+.adSelections header .adButton.next,
+.adSelection header .adButton.next {
+  float: right;
+  margin-right: 10px;
+}
+#areaDescription header .adButton text,
+#adCategory header .adButton text,
+.adSearchResult header .adButton text,
+.adSelections header .adButton text,
+.adSelection header .adButton text {
+  text-anchor: middle;
+  fill: black;
+  font-weight: 400;
+  font-size: 11px;
+}
+#areaDescription header .adButton path,
+#adCategory header .adButton path,
+.adSearchResult header .adButton path,
+.adSelections header .adButton path,
+.adSelection header .adButton path {
+  fill: transparent;
+  stroke: #ddd;
+  stroke-width: 3;
+}
+#areaDescription header .adButton.category circle,
+#adCategory header .adButton.category circle,
+.adSearchResult header .adButton.category circle,
+.adSelections header .adButton.category circle,
+.adSelection header .adButton.category circle {
+  fill: #ddd;
+  stroke: #4B4E6D;
+  stroke-width: 1;
+}
+#areaDescription header .adButton.category circle:hover,
+#adCategory header .adButton.category circle:hover,
+.adSearchResult header .adButton.category circle:hover,
+.adSelections header .adButton.category circle:hover,
+.adSelection header .adButton.category circle:hover {
+  fill: #4B4E6D;
+}
+#areaDescription header .adButton.category:hover text,
+#adCategory header .adButton.category:hover text,
+.adSearchResult header .adButton.category:hover text,
+.adSelections header .adButton.category:hover text,
+.adSelection header .adButton.category:hover text {
+  stroke: #ddd;
+}
+#areaDescription header .adButton.gradeA circle,
+#adCategory header .adButton.gradeA circle,
+.adSearchResult header .adButton.gradeA circle,
+.adSelections header .adButton.gradeA circle,
+.adSelection header .adButton.gradeA circle {
+  fill: #76a865;
+}
+#areaDescription header .adButton.gradeA circle:hover,
+#adCategory header .adButton.gradeA circle:hover,
+.adSearchResult header .adButton.gradeA circle:hover,
+.adSelections header .adButton.gradeA circle:hover,
+.adSelection header .adButton.gradeA circle:hover {
+  stroke-width: 1;
+  stroke: black;
+}
+#areaDescription header .adButton.gradeB circle,
+#adCategory header .adButton.gradeB circle,
+.adSearchResult header .adButton.gradeB circle,
+.adSelections header .adButton.gradeB circle,
+.adSelection header .adButton.gradeB circle {
+  fill: #7cb5bd;
+}
+#areaDescription header .adButton.gradeB circle:hover,
+#adCategory header .adButton.gradeB circle:hover,
+.adSearchResult header .adButton.gradeB circle:hover,
+.adSelections header .adButton.gradeB circle:hover,
+.adSelection header .adButton.gradeB circle:hover {
+  stroke-width: 1;
+  stroke: black;
+}
+#areaDescription header .adButton.gradeC circle,
+#adCategory header .adButton.gradeC circle,
+.adSearchResult header .adButton.gradeC circle,
+.adSelections header .adButton.gradeC circle,
+.adSelection header .adButton.gradeC circle {
+  fill: #ffff00;
+}
+#areaDescription header .adButton.gradeC circle:hover,
+#adCategory header .adButton.gradeC circle:hover,
+.adSearchResult header .adButton.gradeC circle:hover,
+.adSelections header .adButton.gradeC circle:hover,
+.adSelection header .adButton.gradeC circle:hover {
+  stroke-width: 1;
+  stroke: black;
+}
+#areaDescription header .adButton.gradeD circle,
+#adCategory header .adButton.gradeD circle,
+.adSearchResult header .adButton.gradeD circle,
+.adSelections header .adButton.gradeD circle,
+.adSelection header .adButton.gradeD circle {
+  fill: #d9838d;
+}
+#areaDescription header .adButton.gradeD circle:hover,
+#adCategory header .adButton.gradeD circle:hover,
+.adSearchResult header .adButton.gradeD circle:hover,
+.adSelections header .adButton.gradeD circle:hover,
+.adSelection header .adButton.gradeD circle:hover {
+  stroke-width: 1;
+  stroke: black;
+}
+#areaDescription header .adButton.gradeE circle,
+#adCategory header .adButton.gradeE circle,
+.adSearchResult header .adButton.gradeE circle,
+.adSelections header .adButton.gradeE circle,
+.adSelection header .adButton.gradeE circle {
+  fill: #999;
+}
+#areaDescription header .adButton.gradeE circle:hover,
+#adCategory header .adButton.gradeE circle:hover,
+.adSearchResult header .adButton.gradeE circle:hover,
+.adSelections header .adButton.gradeE circle:hover,
+.adSelection header .adButton.gradeE circle:hover {
+  stroke-width: 1;
+  stroke: black;
+}
+#areaDescription .controls,
+#adCategory .controls,
+.adSearchResult .controls,
+.adSelections .controls,
+.adSelection .controls {
+  text-align: center;
+}
+#areaDescription .controls button,
+#adCategory .controls button,
+.adSearchResult .controls button,
+.adSelections .controls button,
+.adSelection .controls button {
+  background-color: #ddd;
+  color: #4B4E6D;
+  border-color: #4B4E6D;
+  font-weight: bold;
+  min-width: 160px;
+  text-align: center;
+  padding: 0;
+  margin: 10px;
+}
+#areaDescription .controls button:hover,
+#adCategory .controls button:hover,
+.adSearchResult .controls button:hover,
+.adSelections .controls button:hover,
+.adSelection .controls button:hover {
+  background-color: white;
+}
+#areaDescription .controls button.inactive,
+#adCategory .controls button.inactive,
+.adSearchResult .controls button.inactive,
+.adSelections .controls button.inactive,
+.adSelection .controls button.inactive {
+  background-color: #ddd;
+  border: #ddd;
+  color: #bbb;
+}
+@media (max-width: 599px) {
+  #areaDescription .controls button,
+#adCategory .controls button,
+.adSearchResult .controls button,
+.adSelections .controls button,
+.adSelection .controls button {
+    width: 150px;
+  }
+}
+#areaDescription ul, #areaDescription .qualitative,
+#adCategory ul,
+#adCategory .qualitative,
+.adSearchResult ul,
+.adSearchResult .qualitative,
+.adSelections ul,
+.adSelections .qualitative,
+.adSelection ul,
+.adSelection .qualitative {
+  line-height: 1.9em;
+  list-style: none;
+  margin: 20px 40px 0 20px;
+  padding: 0;
+}
+@media (max-width: 599px) {
+  #areaDescription ul, #areaDescription .qualitative,
+#adCategory ul,
+#adCategory .qualitative,
+.adSearchResult ul,
+.adSearchResult .qualitative,
+.adSelections ul,
+.adSelections .qualitative,
+.adSelection ul,
+.adSelection .qualitative {
+    margin: 5px 10px;
+  }
+}
+#areaDescription ul li, #areaDescription .qualitative li,
+#adCategory ul li,
+#adCategory .qualitative li,
+.adSearchResult ul li,
+.adSearchResult .qualitative li,
+.adSelections ul li,
+.adSelections .qualitative li,
+.adSelection ul li,
+.adSelection .qualitative li {
+  list-style: none;
+  margin-bottom: 0px;
+  padding-bottom: 3px;
+  min-height: 24px;
+}
+#areaDescription ul .catNum, #areaDescription ul .catLetter, #areaDescription ul .catName, #areaDescription ul .subcatName, #areaDescription ul .holcId, #areaDescription ul th, #areaDescription .qualitative .catNum, #areaDescription .qualitative .catLetter, #areaDescription .qualitative .catName, #areaDescription .qualitative .subcatName, #areaDescription .qualitative .holcId, #areaDescription .qualitative th,
+#adCategory ul .catNum,
+#adCategory ul .catLetter,
+#adCategory ul .catName,
+#adCategory ul .subcatName,
+#adCategory ul .holcId,
+#adCategory ul th,
+#adCategory .qualitative .catNum,
+#adCategory .qualitative .catLetter,
+#adCategory .qualitative .catName,
+#adCategory .qualitative .subcatName,
+#adCategory .qualitative .holcId,
+#adCategory .qualitative th,
+.adSearchResult ul .catNum,
+.adSearchResult ul .catLetter,
+.adSearchResult ul .catName,
+.adSearchResult ul .subcatName,
+.adSearchResult ul .holcId,
+.adSearchResult ul th,
+.adSearchResult .qualitative .catNum,
+.adSearchResult .qualitative .catLetter,
+.adSearchResult .qualitative .catName,
+.adSearchResult .qualitative .subcatName,
+.adSearchResult .qualitative .holcId,
+.adSearchResult .qualitative th,
+.adSelections ul .catNum,
+.adSelections ul .catLetter,
+.adSelections ul .catName,
+.adSelections ul .subcatName,
+.adSelections ul .holcId,
+.adSelections ul th,
+.adSelections .qualitative .catNum,
+.adSelections .qualitative .catLetter,
+.adSelections .qualitative .catName,
+.adSelections .qualitative .subcatName,
+.adSelections .qualitative .holcId,
+.adSelections .qualitative th,
+.adSelection ul .catNum,
+.adSelection ul .catLetter,
+.adSelection ul .catName,
+.adSelection ul .subcatName,
+.adSelection ul .holcId,
+.adSelection ul th,
+.adSelection .qualitative .catNum,
+.adSelection .qualitative .catLetter,
+.adSelection .qualitative .catName,
+.adSelection .qualitative .subcatName,
+.adSelection .qualitative .holcId,
+.adSelection .qualitative th {
+  color: #666;
+}
+#areaDescription ul .catNum, #areaDescription ul .catLetter, #areaDescription ul .catName, #areaDescription ul .subcatName, #areaDescription .qualitative .catNum, #areaDescription .qualitative .catLetter, #areaDescription .qualitative .catName, #areaDescription .qualitative .subcatName,
+#adCategory ul .catNum,
+#adCategory ul .catLetter,
+#adCategory ul .catName,
+#adCategory ul .subcatName,
+#adCategory .qualitative .catNum,
+#adCategory .qualitative .catLetter,
+#adCategory .qualitative .catName,
+#adCategory .qualitative .subcatName,
+.adSearchResult ul .catNum,
+.adSearchResult ul .catLetter,
+.adSearchResult ul .catName,
+.adSearchResult ul .subcatName,
+.adSearchResult .qualitative .catNum,
+.adSearchResult .qualitative .catLetter,
+.adSearchResult .qualitative .catName,
+.adSearchResult .qualitative .subcatName,
+.adSelections ul .catNum,
+.adSelections ul .catLetter,
+.adSelections ul .catName,
+.adSelections ul .subcatName,
+.adSelections .qualitative .catNum,
+.adSelections .qualitative .catLetter,
+.adSelections .qualitative .catName,
+.adSelections .qualitative .subcatName,
+.adSelection ul .catNum,
+.adSelection ul .catLetter,
+.adSelection ul .catName,
+.adSelection ul .subcatName,
+.adSelection .qualitative .catNum,
+.adSelection .qualitative .catLetter,
+.adSelection .qualitative .catName,
+.adSelection .qualitative .subcatName {
+  line-height: 1em;
+  text-align: right;
+  display: inline-block;
+}
+#areaDescription ul .catNum:after, #areaDescription ul .catLetter:after, #areaDescription .qualitative .catNum:after, #areaDescription .qualitative .catLetter:after,
+#adCategory ul .catNum:after,
+#adCategory ul .catLetter:after,
+#adCategory .qualitative .catNum:after,
+#adCategory .qualitative .catLetter:after,
+.adSearchResult ul .catNum:after,
+.adSearchResult ul .catLetter:after,
+.adSearchResult .qualitative .catNum:after,
+.adSearchResult .qualitative .catLetter:after,
+.adSelections ul .catNum:after,
+.adSelections ul .catLetter:after,
+.adSelections .qualitative .catNum:after,
+.adSelections .qualitative .catLetter:after,
+.adSelection ul .catNum:after,
+.adSelection ul .catLetter:after,
+.adSelection .qualitative .catNum:after,
+.adSelection .qualitative .catLetter:after {
+  content: ". ";
+  white-space: pre;
+}
+#areaDescription ul .catData, #areaDescription .qualitative .catData,
+#adCategory ul .catData,
+#adCategory .qualitative .catData,
+.adSearchResult ul .catData,
+.adSearchResult .qualitative .catData,
+.adSelections ul .catData,
+.adSelections .qualitative .catData,
+.adSelection ul .catData,
+.adSelection .qualitative .catData {
+  display: block;
+  margin: 7px 0 7px 34px;
+}
+@media (max-width: 599px) {
+  #areaDescription ul .catData, #areaDescription .qualitative .catData,
+#adCategory ul .catData,
+#adCategory .qualitative .catData,
+.adSearchResult ul .catData,
+.adSearchResult .qualitative .catData,
+.adSelections ul .catData,
+.adSelections .qualitative .catData,
+.adSelection ul .catData,
+.adSelection .qualitative .catData {
+    margin: 5px 0 5px 10px;
+  }
+}
+#areaDescription ul .catSelectable, #areaDescription .qualitative .catSelectable,
+#adCategory ul .catSelectable,
+#adCategory .qualitative .catSelectable,
+.adSearchResult ul .catSelectable,
+.adSearchResult .qualitative .catSelectable,
+.adSelections ul .catSelectable,
+.adSelections .qualitative .catSelectable,
+.adSelection ul .catSelectable,
+.adSelection .qualitative .catSelectable {
+  border-bottom: 1px solid #3D1618;
+  cursor: pointer;
+}
+#areaDescription ul .catSelectable:hover, #areaDescription .qualitative .catSelectable:hover,
+#adCategory ul .catSelectable:hover,
+#adCategory .qualitative .catSelectable:hover,
+.adSearchResult ul .catSelectable:hover,
+.adSearchResult .qualitative .catSelectable:hover,
+.adSelections ul .catSelectable:hover,
+.adSelections .qualitative .catSelectable:hover,
+.adSelection ul .catSelectable:hover,
+.adSelection .qualitative .catSelectable:hover {
+  color: #3D1618;
+}
+#areaDescription ul .subcatData, #areaDescription .qualitative .subcatData,
+#adCategory ul .subcatData,
+#adCategory .qualitative .subcatData,
+.adSearchResult ul .subcatData,
+.adSearchResult .qualitative .subcatData,
+.adSelections ul .subcatData,
+.adSelections .qualitative .subcatData,
+.adSelection ul .subcatData,
+.adSelection .qualitative .subcatData {
+  margin-left: 5px;
+  font-weight: bolder;
+}
+#areaDescription ul .empty, #areaDescription .qualitative .empty,
+#adCategory ul .empty,
+#adCategory .qualitative .empty,
+.adSearchResult ul .empty,
+.adSearchResult .qualitative .empty,
+.adSelections ul .empty,
+.adSelections .qualitative .empty,
+.adSelection ul .empty,
+.adSelection .qualitative .empty {
+  color: #888;
+  font-style: italic;
+  margin: 0 4px;
+}
+#areaDescription ul table, #areaDescription .qualitative table,
+#adCategory ul table,
+#adCategory .qualitative table,
+.adSearchResult ul table,
+.adSearchResult .qualitative table,
+.adSelections ul table,
+.adSelections .qualitative table,
+.adSelection ul table,
+.adSelection .qualitative table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-left: 20px;
+}
+#areaDescription ul table tr, #areaDescription .qualitative table tr,
+#adCategory ul table tr,
+#adCategory .qualitative table tr,
+.adSearchResult ul table tr,
+.adSearchResult .qualitative table tr,
+.adSelections ul table tr,
+.adSelections .qualitative table tr,
+.adSelection ul table tr,
+.adSelection .qualitative table tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+#areaDescription ul table tbody, #areaDescription .qualitative table tbody,
+#adCategory ul table tbody,
+#adCategory .qualitative table tbody,
+.adSearchResult ul table tbody,
+.adSearchResult .qualitative table tbody,
+.adSelections ul table tbody,
+.adSelections .qualitative table tbody,
+.adSelection ul table tbody,
+.adSelection .qualitative table tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+#areaDescription ul table th, #areaDescription ul table td, #areaDescription .qualitative table th, #areaDescription .qualitative table td,
+#adCategory ul table th,
+#adCategory ul table td,
+#adCategory .qualitative table th,
+#adCategory .qualitative table td,
+.adSearchResult ul table th,
+.adSearchResult ul table td,
+.adSearchResult .qualitative table th,
+.adSearchResult .qualitative table td,
+.adSelections ul table th,
+.adSelections ul table td,
+.adSelections .qualitative table th,
+.adSelections .qualitative table td,
+.adSelection ul table th,
+.adSelection ul table td,
+.adSelection .qualitative table th,
+.adSelection .qualitative table td {
+  padding: 12px 5px;
+  text-align: left;
+  border-bottom: 1px solid #e1e1e1;
+}
+#areaDescription ul table td, #areaDescription .qualitative table td,
+#adCategory ul table td,
+#adCategory .qualitative table td,
+.adSearchResult ul table td,
+.adSearchResult .qualitative table td,
+.adSelections ul table td,
+.adSelections .qualitative table td,
+.adSelection ul table td,
+.adSelection .qualitative table td {
+  padding-right: 4px;
+  font-weight: bolder;
+  line-height: 1.3;
+}
+#areaDescription ul .percentage, #areaDescription ul .span, #areaDescription .qualitative .percentage, #areaDescription .qualitative .span,
+#adCategory ul .percentage,
+#adCategory ul .span,
+#adCategory .qualitative .percentage,
+#adCategory .qualitative .span,
+.adSearchResult ul .percentage,
+.adSearchResult ul .span,
+.adSearchResult .qualitative .percentage,
+.adSearchResult .qualitative .span,
+.adSelections ul .percentage,
+.adSelections ul .span,
+.adSelections .qualitative .percentage,
+.adSelections .qualitative .span,
+.adSelection ul .percentage,
+.adSelection ul .span,
+.adSelection .qualitative .percentage,
+.adSelection .qualitative .span {
+  font-size: 14px;
+  padding-left: 20px;
+  line-height: 20px;
+}
+#areaDescription ul .indent, #areaDescription .qualitative .indent,
+#adCategory ul .indent,
+#adCategory .qualitative .indent,
+.adSearchResult ul .indent,
+.adSearchResult .qualitative .indent,
+.adSelections ul .indent,
+.adSelections .qualitative .indent,
+.adSelection ul .indent,
+.adSelection .qualitative .indent {
+  padding-left: 20px;
+  white-space: pre-wrap;
+}
+#areaDescription ul ul.area_description .empty, #areaDescription .qualitative ul.area_description .empty,
+#adCategory ul ul.area_description .empty,
+#adCategory .qualitative ul.area_description .empty,
+.adSearchResult ul ul.area_description .empty,
+.adSearchResult .qualitative ul.area_description .empty,
+.adSelections ul ul.area_description .empty,
+.adSelections .qualitative ul.area_description .empty,
+.adSelection ul ul.area_description .empty,
+.adSelection .qualitative ul.area_description .empty {
+  padding-right: 4px;
+}
+#areaDescription ul .empty, #areaDescription .qualitative .empty,
+#adCategory ul .empty,
+#adCategory .qualitative .empty,
+.adSearchResult ul .empty,
+.adSearchResult .qualitative .empty,
+.adSelections ul .empty,
+.adSelections .qualitative .empty,
+.adSelection ul .empty,
+.adSelection .qualitative .empty {
+  color: #888;
+  font-style: italic;
+  margin: 0 4px;
+}
+#areaDescription .qualitative,
+#adCategory .qualitative,
+.adSearchResult .qualitative,
+.adSelections .qualitative,
+.adSelection .qualitative {
+  margin-bottom: 30px;
+}
+#areaDescription .adimage,
+#adCategory .adimage,
+.adSearchResult .adimage,
+.adSelections .adimage,
+.adSelection .adimage {
+  height: 1100px;
+}
+#areaDescription .explanation,
+#adCategory .explanation,
+.adSearchResult .explanation,
+.adSelections .explanation,
+.adSelection .explanation {
+  width: 60%;
+  margin: 20px auto;
+}
+
+#adCategory h3, #adCategory h4,
+.adSelections h3,
+.adSelections h4 {
+  text-align: center;
+}
+#adCategory h3.headerWithTip, #adCategory h4.headerWithTip,
+.adSelections h3.headerWithTip,
+.adSelections h4.headerWithTip {
+  margin-bottom: 2px;
+}
+#adCategory h3.tip, #adCategory h4.tip,
+.adSelections h3.tip,
+.adSelections h4.tip {
+  margin-top: 2px;
+  color: #666;
+  font-style: italic;
+}
+#dataViewerFull #adCategory,
+#dataViewerFull .adSelections {
+  max-width: 1600px;
+  margin: 0 auto 300px auto;
+}
+#dataViewerFull #adCategory .grade,
+#dataViewerFull .adSelections .grade {
+  display: inline-block;
+  vertical-align: top;
+  width: 25%;
+}
+#adCategory .A h4,
+.adSelections .A h4 {
+  background-color: #76a865;
+}
+#adCategory .B h4,
+.adSelections .B h4 {
+  background-color: #7cb5bd;
+}
+#adCategory .C h4,
+.adSelections .C h4 {
+  background-color: #ffff00;
+}
+#adCategory .D h4,
+.adSelections .D h4 {
+  background-color: #d9838d;
+}
+#adCategory li,
+.adSelections li {
+  clear: both;
+}
+#adCategory li .holcId,
+.adSelections li .holcId {
+  float: left;
+  width: 40px;
+  text-align: right;
+  margin-right: 10px;
+  font-family: "Lato", sans-serif;
+}
+#adCategory li .value,
+.adSelections li .value {
+  margin-left: 50px;
+  cursor: pointer;
+}
+
+button.cityStats {
+  background-color: #666;
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  color: white;
+  border-radius: 0;
+  border: none;
+  height: 36px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+@media (max-width: 899px) {
+  button.cityStats {
+    top: auto;
+    left: 50%;
+    width: 80%;
+    margin-left: -40%;
+    bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+}
+
+.adsearchbox input {
+  display: block;
+  margin: 0 auto;
+  width: 75%;
+}
+
+.adSelection {
+  margin: 0px auto !important;
+  width: 100%;
+  line-height: 1.9em;
+  font-size: 1.2em;
+  cursor: pointer;
+  clear: both;
+}
+.adSelection .catName {
+  color: #666;
+  font-size: 0.9em;
+  float: right;
+}
+.adSelection .selectionText {
+  padding: 0 10px 30px 10px;
+}
+
+.adSelections {
+  width: 100%;
+}
+.adSelections h4 {
+  margin-bottom: 20px;
+}
+
+#adCategory header {
+  height: auto;
+}
+#adCategory header .instructions {
+  line-height: 1.4;
+}
+#adCategory ul {
+  margin: 10px 0;
+}
+#adCategory ul li {
+  padding: 10px;
+  border: 1px solid transparent;
+}
+#adCategory .A ul li:hover {
+  background-color: #cddfc7;
+  border: 1px solid #76a865;
+}
+#adCategory .B ul li:hover {
+  background-color: #e2eef0;
+  border: 1px solid #7cb5bd;
+}
+#adCategory .C ul li:hover {
+  background-color: #ffff99;
+  border: 1px solid #ffff00;
+}
+#adCategory .D ul li:hover {
+  background-color: #f7e5e7;
+  border: 1px solid #d9838d;
+}
+@media (max-width: 899px) {
+  #adCategory .fullViewToggle {
+    display: none;
+  }
+}

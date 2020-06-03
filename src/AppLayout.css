@@ -1,0 +1,68 @@
+.App {
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr 4fr;
+  grid-template-rows: 45px calc(50vh - 37.5px) 30px calc(50vh - 37.5px);
+  background-color: #eee;
+}
+
+#masthead {
+  grid-column: 1 / span 2;
+}
+
+#search {
+  grid-column: 3 / span 2;
+}
+
+#the_map {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 4;
+  height: calc(100vh - 45px);
+  width: 40vw;
+}
+
+#sv_map {
+  grid-column: 4 / span 1;
+  grid-row: 2 / span 4;
+  height: calc(100vh - 45px);
+  width: 40vw;
+}
+
+#thirtiesLabel {
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+  background-color: maroon;
+  color: white;
+  text-align: left;
+  padding-left: 1em;
+  margin: 0;
+  border-bottom: 5px solid olive;
+}
+
+#todayData {
+  grid-column: 2 / span 2;
+  grid-row: 4 / span 1;
+  overflow-y: scroll;
+}
+
+#thirtiesData {
+  grid-column: 2 / span 2;
+  grid-row: 2 / span 1;
+  overflow-y: scroll;
+
+}
+
+#todayLabel {
+  grid-column: 3 / span 1;
+  grid-row: 3 / span 1;
+  background-color: olive;
+  color: white;
+  text-align: right;
+  padding-right: 1em;
+  margin: 0;
+  border-top: 5px solid maroon;
+}
+
+#holcLeafletMap {
+  height: 100%;
+  width: 100%;
+}
