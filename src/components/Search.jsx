@@ -1,47 +1,59 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { Typeahead } from 'react-typeahead';
+import Select from 'react-select';
 import './Search.css';
 
-export default class Search extends React.Component {
-  constructor(props) {
-    super(props);
+const Search = ({options, selectCity}) => {
 
-    this.typeahead = React.createRef();
-    this.onOptionSelected = this.onOptionSelected.bind(this);
-    this.onBlur = this.onBlur.bind(this);
-  }
+  const filterOption = ({ label, value }, string) => {
+    // default search
+    if (label.toLocaleLowerCase().includes(string.toLocaleLowerCase())) return true;
 
-  onOptionSelected(e) {
-    this.typeahead.current.setEntryText(null);
-    this.typeahead.current.refs.entry.blur();
-    this.props.selectCity(e.ad_id);
-  }
-
-  onBlur() {
-    // the delay gives onOptionSelected a moment to execute before the entry text is set to empty and the results disappear
-    //setTimeout(() => this.typeahead.current.setEntryText(null), 500);
-  }
-
-  render() {
-    return (
-      <div
-        id="search"
-      >
-        <Typeahead
-          options={this.props.options}
-          placeholder="Search for city"
-          filterOption="searchName"
-          displayOption={c => `${c.name} ${c.state}`}
-          onOptionSelected={this.onOptionSelected}
-          defaultValue={'Spokane'}
-          onBlur={this.onBlur}
-          ref={this.typeahead}
-        />
-      </div>
+    // check if a group as the filter string as label
+    const groupOptions = options.filter(group =>
+      group.label.toLocaleLowerCase().includes(string)
     );
-  }
+
+    if (groupOptions) {
+      for (const groupOption of groupOptions) {
+        // Check if current option is in group
+        const option = groupOption.options.find(opt => opt.value === value);
+        if (option) {
+          return true;
+        }
+      }
+    }
+    return false;
+  };
+
+  return (
+    <div
+      id="search"
+    >
+      <Select
+        options={options}
+        placeholder="Search for city"
+        onChange={(selected) => { selectCity(selected.value) }}
+        filterOption={filterOption}
+        styles={{
+          container: (provided) => ({
+            ...provided,
+            width: '300px',
+            display: 'inline-block',
+            marginRight: '10px',
+          }),
+          menuList: (provided) => ({
+            ...provided,
+            textAlign: 'left',
+            overflowY: 'scroll',
+          }),
+        }}
+      />
+    </div>
+  );
 }
+
+export default Search;
 
 Search.propTypes = {
   options: PropTypes.arrayOf(PropTypes.object).isRequired,

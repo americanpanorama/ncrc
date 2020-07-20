@@ -1,14 +1,8 @@
 #search {
   background-color: black;
-  text-align: right;
-    overflow-y: visible;
-    z-index: 2000;
-}
-
-#search .typeahead{
   overflow-y: visible;
-  z-index: 1099;
-  pointer-events: none;
+  z-index: 2000;
+  text-align: right;
 }
 
 #search .typeahead input {

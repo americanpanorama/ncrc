@@ -1,4 +1,3 @@
-import TheStore from '.';
 import * as L from 'leaflet';
 import Actions from './ActionTypes';
 import Cities from '../data/Cities.json';
@@ -24,11 +23,8 @@ export function selectCity(eOrId, coords) {
 
     const dimensions = {};
 
-    const path = getCityFilePath(id, Cities);
-    const { bounds, mapIds } = Cities.find(c => c.ad_id === id);
+    const { bounds } = Cities.find(c => c.ad_id === id);
     const centerAndZoom = coords || calculateCenterAndZoom(bounds, dimensions);
-
-    console.log(centerAndZoom);
 
     // if it's already loaded or is being loaded test to see if you need to zoom
     if (selectedCity === id || loadingCity === id) {
@@ -106,6 +102,20 @@ export function selectTract(eOrId) {
   }
 }
 
+export function unselectTract() {
+  return {
+    type: Actions.UNSELECT_TRACT,
+  };
+}
+
+export function selectTractView(eOrId) {
+  const id = getEventId(eOrId);
+  return {
+    type: Actions.SELECT_TRACT_VIEW,
+    payload: id,
+  }
+}
+
 export function onUnhoverHOLCPolygon() {
   return {
     type: Actions.UNHOVER_AREA,
@@ -126,13 +136,46 @@ export function onUnhoverTract() {
   };
 }
 
+export function selectHOLCPolygonOrTract(eOrId) {
+  return (dispatch, getState) => {
+    const { selectedArea } = getState();
+    if (selectedArea) {
+      const id = `${selectedArea.split('-')[0]}-${getEventId(eOrId)}`;
+      dispatch(selectHOLCPolygon(id));
+    } else {
+      dispatch(selectTract(getEventId(eOrId)));
+    }
+  };
+}
 
+export function onHoverHOLCPolygonOrTract(eOrId) {
+  return (dispatch, getState) => {
+    const { selectedArea } = getState();
+    if (selectedArea) {
+      const id = `${selectedArea.split('-')[0]}-${getEventId(eOrId)}`;
+      dispatch(onHoverHOLCPolygon(id));
+    } else {
+      dispatch(onHoverTract(getEventId(eOrId)));
+    }
+  };
+}
+
+export function onUnhoverHOLCPolygonOrTract(eOrId) {
+  return (dispatch, getState) => {
+    const { selectedArea } = getState();
+    if (selectedArea) {
+      dispatch(onUnhoverHOLCPolygon());
+    } else {
+      dispatch(onUnhoverTract());
+    }
+  };
+}
 
 // UTILITY FUNCTIONS
-function getCityFilePath(adId, cities) {
-  const { name, state, year } = cities.find(c => c.ad_id === adId);
-  return `${`${state}${name}${year}`.replace(/[^a-zA-Z0-9]/g, '')}.json`;
-}
+// function getCityFilePath(adId, cities) {
+//   const { name, state, year } = cities.find(c => c.ad_id === adId);
+//   return `${`${state}${name}${year}`.replace(/[^a-zA-Z0-9]/g, '')}.json`;
+// }
 
 function getEventId(eOrId, type = 'string') {
   let id = eOrId.id || eOrId;
@@ -154,23 +197,19 @@ function calculateCenterAndZoom(bounds) {
     center: [0, 0],
     zoom: 0,
   });
-  const { n, s, e, w } = getNSWE(bounds);
   const polygonBounds = L.latLngBounds(bounds);
 
   // this is uncomfortably hacky
   // set the leaflet map instance size and view centering the bounds so you can get the bounds of the actual map
   map._size = L.point(mapWidth, mapHeight);
-  map.setView(polygonBounds.getCenter(), zoom);
-  const mapBounds = map.getBounds();
-
+  map.setView(polygonBounds.getCenter(), 12);
+  //const mapBounds = map.getBounds();
+  
   // Calculate the zoom using the polygonBounds and the width of the visible part of the map.
   // The padding (insetWidth/insetHeight) is needed because the leaflet map isn't in the dom
   // and doesn't have dimensions
   const zoom = map.getBoundsZoom(polygonBounds);
 
-
-
-  console.log(mapWidth, mapHeight, bounds, polygonBounds, zoom, map.getBounds());
 
   // calculate the center  for the inset
   let { lat, lng } = polygonBounds.getCenter();
@@ -181,11 +220,11 @@ function calculateCenterAndZoom(bounds) {
   };
 }
 
-function getNSWE(bounds) {
-  return {
-    n: Math.max(bounds[0][0], bounds[1][0]),
-    s: Math.min(bounds[0][0], bounds[1][0]),
-    e: Math.max(bounds[0][1], bounds[1][1]),
-    w: Math.min(bounds[0][1], bounds[1][1]),
-  };
-}
+// function getNSWE(bounds) {
+//   return {
+//     n: Math.max(bounds[0][0], bounds[1][0]),
+//     s: Math.min(bounds[0][0], bounds[1][0]),
+//     e: Math.max(bounds[0][1], bounds[1][1]),
+//     w: Math.min(bounds[0][1], bounds[1][1]),
+//   };
+// }

@@ -1,7 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { LayerGroup, GeoJSON } from 'react-leaflet';
-import useFetch from './useFetch.js';
 
 const AreaPolygons = ({ polygons, selectHOLCPolygon, unselectHOLCPolygon, onHoverHOLCPolygon, onUnhoverHOLCPolygon }) => {
   return (

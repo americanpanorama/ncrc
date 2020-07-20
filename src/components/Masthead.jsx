@@ -1,8 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './Masthead.css';
 
-const Masthead = ({  }) => {
+const Masthead = () => {
   return (
     <div id='masthead'>
       <h1>Not Even Past: Social Vulnerability and the Legacy of Redlining</h1>

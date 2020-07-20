@@ -10,6 +10,14 @@ const selectedCity = (state = initialState.selectedCity, action) => {
   return state;
 };
 
+const selectedTractView = (state = initialState.selectedCity, action) => {
+  if (action.type === A.SELECT_TRACT_VIEW) {
+    return action.payload;
+  }
+
+  return state;
+};
+
 const map = (state = initialState.map, action) => {
   if (action.type === A.ZOOM_IN) {
     return {
@@ -163,17 +171,17 @@ const map = (state = initialState.map, action) => {
 };
 
 const selectedArea = (state = initialState, action) => {
-  if (action.type == A.SELECT_AREA) {
+  if (action.type === A.SELECT_AREA) {
     return action.payload;
   }
-  if (action.type === A.UNSELECT_AREA || action.type === A.SELECT_CITY) {
+  if (action.type === A.UNSELECT_AREA || action.type === A.SELECT_CITY || action.type === A.SELECT_TRACT) {
     return null;
   }
   return state;
 }
 
 const hoveredArea = (state = initialState, action) => {
-  if (action.type == A.HOVER_AREA) {
+  if (action.type === A.HOVER_AREA) {
     return action.payload;
   }
   if (action.type === A.UNHOVER_AREA || action.type === A.SELECT_CITY) {
@@ -183,17 +191,17 @@ const hoveredArea = (state = initialState, action) => {
 }
 
 const selectedTract = (state = initialState, action) => {
-  if (action.type == A.SELECT_TRACT) {
+  if (action.type === A.SELECT_TRACT) {
     return action.payload;
   }
-  if (action.type === A.UNSELECT_TRACT || action.type === A.SELECT_CITY) {
+  if (action.type === A.UNSELECT_TRACT || action.type === A.SELECT_CITY || action.type === A.SELECT_AREA) {
     return null;
   }
   return state;
 }
 
 const hoveredTract = (state = initialState, action) => {
-  if (action.type == A.HOVER_TRACT) {
+  if (action.type === A.HOVER_TRACT) {
     return action.payload;
   }
   if (action.type === A.UNHOVER_TRACT) {
@@ -204,6 +212,7 @@ const hoveredTract = (state = initialState, action) => {
 
 const combinedReducer = combineReducers({
   selectedCity,
+  selectedTractView,
   map,
   selectedArea,
   hoveredArea,

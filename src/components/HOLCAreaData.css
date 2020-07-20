@@ -1,0 +1,11 @@
+
+#holcAreaData .tabs {
+  margin: 10px auto;
+  padding: 0;
+  text-align: center;
+}
+
+#holcAreaData .tabs li {
+  display: inline-block;
+  text-align: center;
+}

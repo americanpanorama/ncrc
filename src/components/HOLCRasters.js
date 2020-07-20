@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import HOLCRasters from './HOLCRasters.jsx';
-import { getRaster } from '../store/selectors';
+import { getRasters } from '../store/selectors';
 
 const mapStateToProps = state => ({
-  map: getRaster(state),
+  maps: getRasters(state),
 });
 
 export default connect(mapStateToProps)(HOLCRasters);

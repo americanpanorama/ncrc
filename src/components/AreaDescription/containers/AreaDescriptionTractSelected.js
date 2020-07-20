@@ -7,12 +7,10 @@ import FormYorkSelected from '../FormYork/presentational/Selected';
 import AreaDescription from '../presentational/AreaDescription';
 
 import { getSelectedCityData, getCityFilePath } from '../../../store/selectors';
-import { unselectHOLCPolygon } from '../../../store/Actions';
 
 const MapStateToProps = (state) => {
   const cityData = getSelectedCityData(state);
   const filePath = getCityFilePath(state.selectedCity);
-  const selectedArea = (state.selectedArea) ? state.selectedArea.replace(`${state.selectedCity}-`, '') : null;
   // const areaDescription = getSelectedAreaDescription(state);
   // const adData = (areaDescription && areaDescription.areaDesc && Object.keys(areaDescription.areaDesc).length > 0)
   //   ? areaDescription.areaDesc : undefined;
@@ -33,16 +31,15 @@ const MapStateToProps = (state) => {
   if (cityData && cityData.form_id) {
     ({ form_id: formId } = cityData);
     // Madison's unique in using two different forms
-    if (formId === 6234766) {
-      const { selectedArea } = state;
-      const uses19371001 = ['D10', 'D9', 'C15'];
-      formId = (uses19371001.includes(selectedArea)) ? 19371001 : 19370826;
-    }
+    // if (formId === 6234766) {
+    //   const { selectedArea } = state;
+    //   const uses19371001 = ['D10', 'D9', 'C15'];
+    //   formId = (uses19371001.includes(selectedArea)) ? 19371001 : 19370826;
+    // }
     FormComponent = formComponents[formId];
   }
   return {
     selectedCity: state.selectedCity,
-    selectedArea,
     filePath, 
     FormComponent,
     formId,
@@ -50,7 +47,6 @@ const MapStateToProps = (state) => {
 };
 
 const MapDispatchToState = {
-  unselectHOLCPolygon,
 };
 
 export default connect(MapStateToProps, MapDispatchToState)(AreaDescription);

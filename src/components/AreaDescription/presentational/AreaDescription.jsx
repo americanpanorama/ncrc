@@ -2,13 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import HeaderArea from '../presentational/HeaderArea.jsx';
-import TranscriptionButton from '../containers/TranscriptionButton';
-import ViewAllADsButton from '../containers/ViewAllADsButton';
-import ImageButton from '../containers/ImageButton';
 import useFetch from '../../useFetch.js';
 import './AreaDescription.css';
 
-const AreaDescription = ({ selectedArea, selectedCity, filePath, FormComponent, formId }) => {
+const AreaDescription = ({ selectedArea, selectedCity, filePath, FormComponent, showHeader, formId, unselectHOLCPolygon }) => {
   if (!selectedArea || !filePath) {
     return null;
   }
@@ -21,16 +18,17 @@ const AreaDescription = ({ selectedArea, selectedCity, filePath, FormComponent, 
     return null;
   }
   const adData = resADs.response.ads[selectedArea].areaDesc;
-  console.log(adData);
   return (
     <div id="areaDescription">
-      <HeaderArea
-        holcId={selectedArea}
-        adId={selectedCity}
-        name={(adData.name) ? adData.name : null}
-        unselectArea={() => false}
-        zoomToArea={() => false}
-      />
+      {(showHeader) && (
+        <HeaderArea
+          holcId={selectedArea}
+          adId={selectedCity}
+          name={(adData.name) ? adData.name : null}
+          unselectArea={unselectHOLCPolygon}
+          zoomToArea={() => false}
+        />
+      )}
       { (adData) ? (
         <FormComponent
           adData={adData}
@@ -55,4 +53,5 @@ AreaDescription.propTypes = {
 AreaDescription.defaultProps = {
   FormComponent: undefined,
   formId: undefined,
+  showHeader: true,
 };

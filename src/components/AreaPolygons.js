@@ -1,7 +1,5 @@
 import { connect } from 'react-redux';
 import AreaPolygons from './AreaPolygons.jsx';
-//import { selectArea, unselectArea, highlightArea, unhighlightArea } from '../store/Actions';
-import { getSelectedCityPolygonsPath } from '../store/selectors';
 import { selectHOLCPolygon, unselectHOLCPolygon, onHoverHOLCPolygon, onUnhoverHOLCPolygon } from '../store/Actions';
 
 

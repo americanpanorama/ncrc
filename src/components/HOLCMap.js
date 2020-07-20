@@ -6,7 +6,7 @@ const mapStateToProps = (state) => {
   const { hoveredTract, map, hoveredArea, selectedArea, selectedTract } = state;
   const { zoom, center, bounds } = map;
   let className = '';
-  if (state.hoveredArea || state.selectedArea) {
+  if (state.hoveredArea || state.selectedArea || state.selectedTract) {
     className = 'greyscale';
   }
   return {

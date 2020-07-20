@@ -3,27 +3,19 @@ import SVMap from './SVMap.jsx';
 import { selectTract, onHoverTract, onUnhoverTract } from '../store/Actions';
 
 const mapStateToProps = (state) => {
-  const { map, hoveredArea, selectedArea, selectedCity, selectedTract } = state;
+  const { map, hoveredArea, selectedArea, hoveredTract, selectedCity, selectedTract, selectedTractView } = state;
   const { zoom, center, bounds } = map;
-  let className = '';
-  // if (showSVMaps && highlightedPolygons.length > 0) {
-  //   className = `greyscale zoom-${zoom}`;
-  // }
-  // if (selectedGrade) {
-  //   className = 'greyscale';
-  // }
   return {
     zoom,
     center,
     bounds,
     hoveredArea,
+    hoveredTract,
     selectedArea,
     selectedCity,
     selectedTract,
-    // showSVMaps,
-    // aboveThreshold,
+    selectedTractView,
     // style: dimensions.mapStyle,
-    // className,
   };
 };
 

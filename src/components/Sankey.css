@@ -1,0 +1,13 @@
+#sankeyDiagram {
+  background-color: #0f0f0f;
+}
+
+#sankeyDiagram text {
+  fill: white;
+}
+
+#sankeyDiagram text.svValue {
+  fill: black;
+  font-size: 12px;
+  pointer-events: none;
+}

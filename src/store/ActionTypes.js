@@ -10,6 +10,7 @@ const constants = {
   UNSELECT_AREA: 'UNSELECT_AREA',
   SELECT_TRACT: 'SELECT_TRACT',
   UNSELECT_TRACT: 'UNSELECT_TRACT',
+  SELECT_TRACT_VIEW: 'SELECT_TRACT_VIEW',
 };
 
 export default constants;
