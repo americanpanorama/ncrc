@@ -121,6 +121,7 @@ const TractData = ({ selectedTract, unselectTract, tractData }) => {
 
       <BeeswarmGraph
         data={getPercents('asthma_pct')}
+        param='asthma_pct'
         selected={selectedTract}
         label='Asthma'
         type='percent'

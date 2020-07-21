@@ -102,6 +102,15 @@ const SVMap = (props) => {
     //.domain([1, 0.66, 0.33, 0]);
     .domain([minForView, minForView + rangeForView * 0.2, minForView + rangeForView * 0.4,  minForView + rangeForView * 0.6, minForView + rangeForView * 0.8, maxForView]);
 
+
+  const colorScaleNeutral = d3.scaleLinear()
+    //.range(['#d9838d', '#d9838d', '#ffff00', '#7cb5bd', '#76a865'])
+    .range(['white', '#FFA500'])
+    .range(['#3D9578', '#3D8695', '#3D5A95', '#4C3D95', '#783D95'])
+    //.domain([1, 0.66, 0.33, 0]);
+    .domain([minForView, minForView + rangeForView * 0.25, minForView + rangeForView * 0.5,  minForView + rangeForView * 0.75, maxForView]);
+
+
   // calculate styles
   const tracts = tractPolygons
     .filter((ct, index, self) => {
@@ -111,7 +120,7 @@ const SVMap = (props) => {
       return {
         ...ct,
         fillOpacity: 0.33, //fillOpacity(ct.total_pers),
-        fill: colorScale(ct[selectedTractView]),
+        fill: (['life_exp', 'minority_pct', 'over65_pct', 'median_age'].includes(selectedTractView)) ? colorScaleNeutral(ct[selectedTractView]) : colorScale(ct[selectedTractView]),
       };
     });
 
