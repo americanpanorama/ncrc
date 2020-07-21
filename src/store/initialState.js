@@ -1,7 +1,7 @@
 export default {
   // selectedArea: null,
   // selectedCategory,
-  selectedCity: 168,
+  selectedCity: 267,
   selectedTractView: 'sovi',
   selectedArea: null,
   hoveredArea: null,

@@ -15,11 +15,11 @@ const BeeswarmGraph = ({ data, selected, label, type, param, selectedView, selec
 
   // set the radius based on the number of area
   const radius = Math.min(4, Math.max(1, 450 / data.length));
-  console.log(radius);
 
   const xScale = d3.scaleLinear()
     .domain([minValue, maxValue])
-    .range([5, width - 5]);
+    .range([10, width - 10]);
+
   let swarm = beeswarm()
     .data(data)                                 // set the data to arrange
     .distributeOn(d => xScale(d.value))                  // set the value accessor to distribute on
@@ -53,7 +53,7 @@ const BeeswarmGraph = ({ data, selected, label, type, param, selectedView, selec
           cx={tract.x}
           cy={tract.y + beeswarmHeight / 2 + 20}
           r={(tract.datum.id === selected) ? radius * 4 / 3 : radius}
-          fill={(tract.datum.id === selected) ? 'black' : 'grey'}
+          fill={tract.datum.fill}
           strokeWidth={(tract.datum.id === selected) ? 1 : 0.25}
           stroke={(tract.datum.id === selected) ? 'black' : '#555'}
           fillOpacity={(tract.datum.id === selected) ? 1 : 0.2}
@@ -97,7 +97,7 @@ const BeeswarmGraph = ({ data, selected, label, type, param, selectedView, selec
         <text
           x={width / 2}
           y={15}
-          fontSize={12}
+          fontSize={14}
           textAnchor='middle'
           onClick={(param) ? selectTractView : () => false}
           id={param}

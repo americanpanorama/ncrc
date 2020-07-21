@@ -14,10 +14,22 @@ const TractData = ({ selectedTract, unselectTract, tractData }) => {
   const { id, pop_num } = tractData.find(tp => tp.id === selectedTract);
 
   //A color scale
+  // const colorScale = d3.scaleLinear()
+  //   //.range(['#d9838d', '#d9838d', '#ffff00', '#7cb5bd', '#76a865'])
+  //   .range(['#FB2B11', '#faed27', '#15f4ee', '#39ff14'])
+  //   .domain([4, 3, 2, 1]);
+
+  const minValue = 0;
+  const maxValue = 1;
+  const rangeValue = 1;
+  //A color scale
   const colorScale = d3.scaleLinear()
     //.range(['#d9838d', '#d9838d', '#ffff00', '#7cb5bd', '#76a865'])
-    .range(['#FB2B11', '#faed27', '#15f4ee', '#39ff14'])
-    .domain([4, 3, 2, 1]);
+    .range(['white', '#FFA500'])
+    .range(['#59E854', '#2F960D', '#0D440E', '#EFD507', '#EC0003', '#FF0093'])
+    //.domain([1, 0.66, 0.33, 0]);
+    .domain([minValue, minValue + rangeValue * 0.2, minValue + rangeValue * 0.4,  minValue + rangeValue * 0.6, minValue + rangeValue * 0.8, maxValue]);
+
 
   const getPercents = (param) => tractData
     .filter(d => d[param])
@@ -30,18 +42,14 @@ const TractData = ({ selectedTract, unselectTract, tractData }) => {
 
   return (
     <div className='tractData'>
-        <span
+      {(selectedTract) && (
+        <button
           onClick={unselectTract}
-          role="button"
           tabIndex={0}
-          style={{
-            marginLeft: 5,
-          }}
         >
-          <Close />
-        </span>
-
-      <div>{id}</div>
+          Close
+        </button>
+      )}
 
       <BeeswarmGraph
         data={getPercents('sovi')}

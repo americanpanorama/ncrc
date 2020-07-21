@@ -3,5 +3,10 @@
 }
 .tractData .beeswarm {
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
+}
+
+.tractData button {
+  float: right;
+  margin-bottom: 20px;
 }

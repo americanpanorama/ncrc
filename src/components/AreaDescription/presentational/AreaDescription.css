@@ -1,6 +1,16 @@
 /* #418e41; */
 /*#d8d165;  #f4f570; */
 /* #a79500; */
+
+#areaDescription {
+  margin: 10px;
+}
+
+#areaDescription button {
+  float: right;
+}
+
+#areaDescription header
 #areaDescription header,
 #adCategory header,
 .adSearchResult header,
@@ -17,6 +27,8 @@
 .adSelection header h3 {
   max-width: 70%;
   margin: auto auto 10px auto;
+  clear: both;
+  text-align: center;
 }
 #areaDescription header .adButton,
 #adCategory header .adButton,

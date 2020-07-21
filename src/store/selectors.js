@@ -22,7 +22,7 @@ export const getRasters = createSelector(
 export const getSelectedCityPolygonsPath = createSelector(
   [getSelectedCity],
   (selectedCity) => {
-    const raster = Rasters.find(r => r.id === selectedCity);
+    const raster = Cities.find(r => r.ad_id === selectedCity);
     return `${raster.state}${raster.file_name}${raster.year}.json`;
   }
 );

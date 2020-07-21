@@ -5,31 +5,20 @@ import ZoomToButton from '../../Buttons/presentational/ZoomTo';
 
 const HeaderArea = ({ holcId, adId, name, unselectArea, zoomToArea }) => (
   <header>
+    <button
+      onClick={unselectArea}
+      role="button"
+      tabIndex={1}
+      style={{
+        marginLeft: 5,
+      }}
+    >
+      Close
+    </button>
     <h3>
       {holcId}
       {(name) ? ` ${name}` : ''}
 
-      <span
-        onClick={zoomToArea}
-        role="button"
-        tabIndex={0}
-        id={`${adId}-${holcId}`}
-        style={{
-          marginLeft: 5,
-        }}
-      >
-        <ZoomToButton />
-      </span>
-      <span
-        onClick={unselectArea}
-        role="button"
-        tabIndex={1}
-        style={{
-          marginLeft: 5,
-        }}
-      >
-        <CloseButton />
-      </span>
     </h3>
   </header>
 );

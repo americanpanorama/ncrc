@@ -26,9 +26,18 @@ const Sankey = (props) => {
 
   d3.sankey = d3sankey;
 
+  const minForView = 0;
+  const maxForView = 1;
+  const rangeForView = 1;
+
   const colorScaleTracts = d3.scaleLinear()
-    .range(['white', '#FFA500'])
-    .domain([0, 1]);
+    //.range(['white', '#FFA500'])
+    // .range(['red', 'orange', 'yellow', 'green'])
+    // .domain([1, 0.66, 0.33, 0]);
+    .range(['#59E854', '#2F960D', '#0D440E', '#EFD507', '#EC0003', '#FF0093'])
+    //.domain([1, 0.66, 0.33, 0]);
+    .domain([minForView, minForView + rangeForView * 0.2, minForView + rangeForView * 0.4,  minForView + rangeForView * 0.6, minForView + rangeForView * 0.8, maxForView]);
+
 
   const colorScaleHOLC = d3.scaleOrdinal()
     .range(['#d9838d', '#ffff00', '#7cb5bd', '#76a865'])
@@ -205,6 +214,7 @@ const Sankey = (props) => {
             y1={0}
             y2={1}
           >
+            {/* JSX Comment
             <stop
               offset='0%'
               stopColor='white'
@@ -213,6 +223,33 @@ const Sankey = (props) => {
               offset='100%'
               stopColor='#FFA500'
             />
+           */}
+           <stop
+             offset='0%'
+             stopColor='#59E854'
+          />
+          <stop
+             offset='20%'
+             stopColor='#2F960D'
+          />
+          <stop
+             offset='40%'
+             stopColor='#0D440E'
+          />
+          <stop
+             offset='60%'
+             stopColor='#EFD507'
+          />
+          <stop
+             offset='80%'
+             stopColor='#EC0003'
+          />
+          <stop
+             offset='100%'
+             stopColor='#FF0093'
+          />
+
+
           </linearGradient>
           {['A', 'B', 'C', 'D'].map(grade => (
             <React.Fragment

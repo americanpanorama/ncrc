@@ -35,12 +35,12 @@
 #thirtiesLabel {
   grid-column: 2 / span 1;
   grid-row: 3 / span 1;
-  background-color: maroon;
+  background-color: black;
   color: white;
   text-align: left;
   padding-left: 1em;
   margin: 0;
-  border-bottom: 5px solid olive;
+  border-bottom: 5px solid white;
 }
 
 #todayData {
@@ -59,12 +59,12 @@
 #todayLabel {
   grid-column: 3 / span 1;
   grid-row: 3 / span 1;
-  background-color: olive;
-  color: white;
+  background-color: white;
+  color: black;
   text-align: right;
   padding-right: 1em;
   margin: 0;
-  border-top: 5px solid maroon;
+  border-top: 5px solid black;
 }
 
 #holcLeafletMap {

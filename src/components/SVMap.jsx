@@ -80,6 +80,7 @@ const SVMap = (props) => {
 
   const maxForView = Math.max(...tractPolygons.map(ct => ct[selectedTractView]));
   const minForView = Math.min(...tractPolygons.filter(ct => ct[selectedTractView] > 0).map(ct => ct[selectedTractView]));
+  const rangeForView = maxForView - minForView;
 
   // const fillOpacity = d3.scaleLinear()
   //   .range([0.05, 0.5])
@@ -97,7 +98,9 @@ const SVMap = (props) => {
   const colorScale = d3.scaleLinear()
     //.range(['#d9838d', '#d9838d', '#ffff00', '#7cb5bd', '#76a865'])
     .range(['white', '#FFA500'])
-    .domain([minForView, maxForView]);
+    .range(['#59E854', '#2F960D', '#0D440E', '#EFD507', '#EC0003', '#FF0093'])
+    //.domain([1, 0.66, 0.33, 0]);
+    .domain([minForView, minForView + rangeForView * 0.2, minForView + rangeForView * 0.4,  minForView + rangeForView * 0.6, minForView + rangeForView * 0.8, maxForView]);
 
   // calculate styles
   const tracts = tractPolygons
